@@ -30,7 +30,7 @@ public class IngresarCredenciales implements Task {
         actor.attemptsTo(
             Enter.theValue(usuario).into(LoginPage.USERNAME),
             Enter.theValue(contrasena).into(LoginPage.PASSWORD),
-            Click.on(LoginPage.BOTON_LOGIN)
+            Click.on(LoginPage.LOGIN_BUTTON)
         );
     }
 }

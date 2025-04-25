@@ -1,11 +1,18 @@
 package eduardo.enrique.questions;
 
+import eduardo.enrique.ui.LoginPage;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Visibility;
-import eduardo.enrique.ui.DashboardPage;
 
 public class ElDashboard {
+
     public static Question<Boolean> esVisible() {
-        return actor -> Visibility.of(DashboardPage.MENU).viewedBy(actor).asBoolean();
+        return new Question<>() {
+            @Override
+            public Boolean answeredBy(Actor actor) {
+                return Visibility.of(LoginPage.DASHBOARD).answeredBy(actor);
+            }
+        };
     }
 }
